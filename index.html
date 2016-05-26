@@ -3,11 +3,14 @@
 <head>
 
 <script>
-var val=0;
-prompt(val);
+var val=(prompt("What number?"));
 //___fizzbuzz2 accepts integer "end" and implements fizzbuzz on it.
 function fizzbuzz2 (end){
 document.open();
+
+if (end%1!=0) {document.writeln ("Not an integer.  Exiting!")}
+else if (isNaN(100/end)) { document.writeln ("Not a number.  Exiting!")}
+else {
 for (var i=1;i<=end;i++) {
 
 if (i%3==0 && i%5==0) { document.writeln ('fizzbuzz '); }
@@ -16,6 +19,7 @@ else if (i%3==0) {document.writeln ('fizz '); }
 else { document.writeln(i+" "); }
 }
 document.close();
+}
 }
 //____end of fizzbuzz2 function
 fizzbuzz2 (val)
